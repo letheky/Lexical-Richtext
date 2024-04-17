@@ -24,6 +24,7 @@ Then you can run the development server:
 bun dev 
 
 ```
+For more examples please visit https://lexical.dev/docs/intro/
 
 Happy coding !
 
