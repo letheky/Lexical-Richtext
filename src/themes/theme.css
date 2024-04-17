@@ -1,0 +1,292 @@
+.QuizApp__ltr {
+    text-align: left;
+}
+
+.QuizApp__rtl {
+    text-align: right;
+}
+
+.QuizApp__paragraph {
+    margin: 0;
+    position: relative;
+}
+
+.QuizApp__quote {
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: rgb(101, 103, 107);
+    border-left-color: rgb(206, 208, 212);
+    border-left-width: 4px;
+    border-left-style: solid;
+    padding-left: 16px;
+}
+
+.QuizApp__h1 {
+    font-size: 24px;
+    color: rgb(5, 5, 5);
+    font-weight: 400;
+    margin: 0;
+}
+
+.QuizApp__h2 {
+    font-size: 15px;
+    color: rgb(101, 103, 107);
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.QuizApp__h3 {
+    font-size: 12px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.QuizApp__indent {
+    --lexical-indent-base-value: 40px;
+}
+
+.QuizApp__textBold {
+    font-weight: bold;
+}
+
+.QuizApp__textItalic {
+    font-style: italic;
+}
+
+.QuizApp__textUnderline {
+    text-decoration: underline;
+}
+
+.QuizApp__textStrikethrough {
+    text-decoration: line-through;
+}
+
+.QuizApp__textUnderlineStrikethrough {
+    text-decoration: underline line-through;
+}
+
+.QuizApp__textSubscript {
+    font-size: 0.8em;
+    vertical-align: sub !important;
+}
+
+.QuizApp__textSuperscript {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+.QuizApp__hashtag {
+    background-color: rgba(88, 144, 255, 0.15);
+    border-bottom: 1px solid rgba(88, 144, 255, 0.3);
+}
+
+.QuizApp__link {
+    color: rgb(33, 111, 219);
+    text-decoration: none;
+}
+
+.QuizApp__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.QuizApp__characterLimit {
+    display: inline;
+    background-color: #ffbbbb !important;
+}
+
+.QuizApp__ol1 {
+    padding: 0;
+    margin: 0;
+    list-style-position: outside;
+}
+
+.QuizApp__ol2 {
+    padding: 0;
+    margin: 0;
+    list-style-type: upper-alpha;
+    list-style-position: outside;
+}
+
+.QuizApp__ol3 {
+    padding: 0;
+    margin: 0;
+    list-style-type: lower-alpha;
+    list-style-position: outside;
+}
+
+.QuizApp__ol4 {
+    padding: 0;
+    margin: 0;
+    list-style-type: upper-roman;
+    list-style-position: outside;
+}
+
+.QuizApp__ol5 {
+    padding: 0;
+    margin: 0;
+    list-style-type: lower-roman;
+    list-style-position: outside;
+}
+
+.QuizApp__ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: outside;
+}
+
+.QuizApp__listItem {
+    margin: 0 32px;
+}
+
+.QuizApp__listItemChecked,
+.QuizApp__listItemUnchecked {
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    list-style-type: none;
+    outline: none;
+}
+
+.QuizApp__listItemChecked {
+    text-decoration: line-through;
+}
+
+.QuizApp__listItemUnchecked:before,
+.QuizApp__listItemChecked:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 0;
+    cursor: pointer;
+    display: block;
+    background-size: cover;
+    position: absolute;
+}
+
+.QuizApp__listItemUnchecked[dir='rtl']:before,
+.QuizApp__listItemChecked[dir='rtl']:before {
+    left: auto;
+    right: 0;
+}
+
+.QuizApp__listItemUnchecked:focus:before,
+.QuizApp__listItemChecked:focus:before {
+    box-shadow: 0 0 0 2px #a6cdfe;
+    border-radius: 2px;
+}
+
+.QuizApp__listItemUnchecked:before {
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.QuizApp__listItemChecked:before {
+    border: 1px solid rgb(61, 135, 245);
+    border-radius: 2px;
+    background-color: #3d87f5;
+    background-repeat: no-repeat;
+}
+
+.QuizApp__listItemChecked:after {
+    content: '';
+    cursor: pointer;
+    border-color: #fff;
+    border-style: solid;
+    position: absolute;
+    display: block;
+    top: 6px;
+    width: 3px;
+    left: 7px;
+    right: 7px;
+    height: 6px;
+    transform: rotate(45deg);
+    border-width: 0 2px 2px 0;
+}
+
+.QuizApp__nestedListItem {
+    list-style-type: none;
+}
+
+.QuizApp__nestedListItem:before,
+.QuizApp__nestedListItem:after {
+    display: none;
+}
+
+.QuizApp__tokenComment {
+    color: slategray;
+}
+
+.QuizApp__tokenPunctuation {
+    color: #999;
+}
+
+.QuizApp__tokenProperty {
+    color: #905;
+}
+
+.QuizApp__tokenSelector {
+    color: #690;
+}
+
+.QuizApp__tokenOperator {
+    color: #9a6e3a;
+}
+
+.QuizApp__tokenAttr {
+    color: #07a;
+}
+
+.QuizApp__tokenVariable {
+    color: #e90;
+}
+
+.QuizApp__tokenFunction {
+    color: #dd4a68;
+}
+
+.QuizApp__mark {
+    background: rgba(255, 212, 0, 0.14);
+    border-bottom: 2px solid rgba(255, 212, 0, 0.3);
+    padding-bottom: 2px;
+}
+
+.QuizApp__markOverlap {
+    background: rgba(255, 212, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+
+.QuizApp__mark.selected {
+    background: rgba(255, 212, 0, 0.5);
+    border-bottom: 2px solid rgba(255, 212, 0, 1);
+}
+
+.QuizApp__markOverlap.selected {
+    background: rgba(255, 212, 0, 0.7);
+    border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+
+.QuizApp__embedBlock {
+    user-select: none;
+}
+
+.QuizApp__embedBlockFocus {
+    outline: 2px solid rgb(60, 132, 244);
+}
+
+.QuizApp__layoutContainer {
+    display: grid;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.QuizApp__layoutItem {
+    border: 1px dashed #ddd;
+    padding: 8px 16px;
+}
