@@ -1,8 +1,29 @@
-# React + Vite
+# React + Vite + Lexical
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a repo using Lexical for super customizable rich text editor 
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First, install all dependencies:
+
+```bash
+bun install 
+
+```
+but if you didn't have bun yet, you should install it with the following command:
+
+```bash
+curl -fsSL https://bun.sh/install | bash    # for macOS, Linux and WSL 
+powershell -c "irm bun.sh/install.ps1|iex"  # for Windows
+
+```
+
+Then you can run the development server:
+
+```bash
+bun dev 
+
+```
+
+Happy coding !
+
