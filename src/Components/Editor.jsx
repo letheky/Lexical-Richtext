@@ -29,6 +29,7 @@ import EmojisPlugin from '../plugins/EmojisPlugin';
 import FloatingLinkEditorPlugin from '../plugins/FloatingLinkEditorPlugin';
 import FloatingTextFormatToolbarPlugin from '../plugins/FloatingTextFormatToolbarPlugin';
 import ImagesPlugin from '../plugins/ImagesPlugin';
+import AudioPlugin from '../plugins/AudioPlugin';
 import { LayoutPlugin } from '../plugins/LayoutPlugin/LayoutPlugin';
 import LinkPlugin from '../plugins/LinkPlugin';
 import ListMaxIndentLevelPlugin from '../plugins/ListMaxIndentLevelPlugin';
@@ -80,7 +81,7 @@ export default function Editor() {
                 <DragDropPaste />
                 <AutoFocusPlugin />
                 <ClearEditorPlugin />
-                <ComponentPickerPlugin />
+                {/* <ComponentPickerPlugin /> */}
                 <EmojiPickerPlugin />
                 <AutoEmbedPlugin />
                 <EmojisPlugin />
@@ -102,6 +103,7 @@ export default function Editor() {
                     <CheckListPlugin />
                     <ListMaxIndentLevelPlugin maxDepth={7} />
                     <ImagesPlugin />
+                    <AudioPlugin />
                     <LinkPlugin />
                     <YouTubePlugin />
                     <LexicalClickableLinkPlugin disabled={isEditable} />
@@ -124,7 +126,8 @@ export default function Editor() {
                         </>
                     )}
                 </>
-                <ContextMenuPlugin />
+                
+                {/* <ContextMenuPlugin /> */}
                 <ActionsPlugin />
             </div>
         </>

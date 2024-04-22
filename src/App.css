@@ -41,7 +41,6 @@ header h1 {
 .editor-shell {
   margin: 20px auto;
   border-radius: 2px;
-  max-width: 1100px;
   color: #000;
   position: relative;
   line-height: 1.7;
@@ -736,48 +735,6 @@ i.page-break,
   cursor: grabbing;
 }
 
-.editor-shell .editor-image .image-caption-container .tree-view-output {
-  margin: 0;
-  border-radius: 0;
-}
-
-.editor-shell .editor-image .image-caption-container {
-  display: block;
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid #fff;
-  background-color: rgba(255, 255, 255, 0.9);
-  min-width: 100px;
-  color: #000;
-  overflow: hidden;
-}
-
-.editor-shell .editor-image .image-caption-button {
-  display: block;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  width: 30%;
-  padding: 10px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  min-width: 100px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-.editor-shell .editor-image .image-caption-button:hover {
-  background-color: rgba(60, 132, 244, 0.5);
-}
-
 .editor-shell .editor-image .image-edit-button {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -854,6 +811,18 @@ i.page-break,
   top: -6px;
   left: -6px;
   cursor: nw-resize;
+}
+
+.editor-shell span.editor-audio {
+  cursor: default;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+
+.editor-shell .editor-audio audio {
+  max-width: 100%;
+  cursor: default;
 }
 
 .emoji {
@@ -1027,6 +996,14 @@ button.toolbar-item i.format {
   vertical-align: -0.25em;
   display: flex;
   opacity: 0.6;
+}
+button.toolbar-item i.normal {
+  background-size: contain;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: -0.25em;
+  display: flex;
 }
 
 button.toolbar-item:disabled .icon,

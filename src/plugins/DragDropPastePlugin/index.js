@@ -5,6 +5,7 @@ import {COMMAND_PRIORITY_LOW} from 'lexical';
 import {useEffect} from 'react';
 
 import {INSERT_IMAGE_COMMAND} from '../ImagesPlugin';
+import { INSERT_AUDIO_COMMAND } from '../AudioPlugin';
 
 const ACCEPTABLE_IMAGE_TYPES = [
   'image/',
@@ -13,6 +14,16 @@ const ACCEPTABLE_IMAGE_TYPES = [
   'image/gif',
   'image/webp',
 ];
+
+const ACCEPTABLE_AUDIO_TYPES = [
+  'audio/',
+  'audio/mp4',
+  'audio/mp3',
+  'audio/mpeg',
+  'audio/ogg',
+  'audio/wav',
+  'audio/webm',
+]
 
 export default function DragDropPaste() {
   const [editor] = useLexicalComposerContext();
@@ -29,6 +40,11 @@ export default function DragDropPaste() {
             if (isMimeType(file, ACCEPTABLE_IMAGE_TYPES)) {
               editor.dispatchCommand(INSERT_IMAGE_COMMAND, {
                 altText: file.name,
+                src: result,
+              });
+            }
+            if (isMimeType(file, ACCEPTABLE_AUDIO_TYPES)) {
+              editor.dispatchCommand(INSERT_AUDIO_COMMAND, {
                 src: result,
               });
             }

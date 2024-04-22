@@ -17,6 +17,7 @@ const theme = {
     h6: 'QuizApp__h6',
   },
   image: 'editor-image',
+  audio: 'editor-audio',
   indent: 'QuizApp__indent',
   layoutContainer: 'QuizApp__layoutContainer',
   layoutItem: 'QuizApp__layoutItem',

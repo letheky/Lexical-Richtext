@@ -21,7 +21,7 @@ export const YoutubeEmbedConfig = {
   exampleUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
 
   // Icon for display.
-  icon: <i className="icon youtube" />,
+  icon: <i className="normal youtube" />,
 
   insertNode: (editor, result) => {
     editor.dispatchCommand(INSERT_YOUTUBE_COMMAND, result.id);

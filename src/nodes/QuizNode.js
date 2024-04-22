@@ -9,6 +9,7 @@ import { ImageNode } from './ImageNode';
 import { LayoutContainerNode } from './LayoutContainerNode';
 import { LayoutItemNode } from './LayoutItemNode';
 import { YouTubeNode } from './YouTubeNode';
+import { AudioNode } from './AudioNode';
 
 const QuizNodes = [
     HeadingNode,
@@ -19,6 +20,7 @@ const QuizNodes = [
     LinkNode,
     OverflowNode,
     ImageNode,
+    AudioNode,
     EmojiNode,
     HorizontalRuleNode,
     YouTubeNode,

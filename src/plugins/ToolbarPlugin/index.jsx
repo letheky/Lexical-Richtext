@@ -55,12 +55,14 @@ import { IS_APPLE } from '../../shared/enviroment';
 import useModal from '../../hooks/useModal';
 import DropDown, { DropDownItem } from '../../ui/DropDown';
 import DropdownColorPicker from '../../ui/DropdownColorPicker';
+import DropdownQuestions from "../../ui/DropdownQuestions";
 import { getSelectedNode } from '../../utils/getSelectedNode';
 import { sanitizeUrl } from '../../utils/url';
 import { EmbedConfigs } from '../AutoEmbedPlugin';
 import {
   InsertImageDialog,
 } from '../ImagesPlugin';
+import { InsertAudioDialog } from '../AudioPlugin';
 import FontSize from './fontSize';
 
 const blockTypeToBlockName = {
@@ -691,6 +693,13 @@ export default function ToolbarPlugin({
 
   return (
     <div className="toolbar">
+      <DropdownQuestions
+        disabled={!isEditable}
+        buttonClassName="toolbar-item spaced"
+        buttonLabel="Insert"
+        buttonAriaLabel="Insert specialized question"
+        buttonIconClassName="icon plus">
+      </DropdownQuestions>
       <button
         disabled={!canUndo || !isEditable}
         onClick={() => {
@@ -855,51 +864,69 @@ export default function ToolbarPlugin({
             </DropDownItem>
           </DropDown>
           <Divider />
-          <DropDown
+          <button
             disabled={!isEditable}
-            buttonClassName="toolbar-item spaced"
-            buttonLabel="Insert"
-            buttonAriaLabel="Insert specialized editor node"
-            buttonIconClassName="icon plus">
-            <DropDownItem
+            onClick={() => {
+              activeEditor.dispatchCommand(
+                INSERT_HORIZONTAL_RULE_COMMAND,
+                undefined,
+              );
+            }}
+            className='toolbar-item '
+            title='Insert horizontal rule'
+            type="button"
+            aria-label='Insert a new horizontal rule after cursor'>
+            <i className="normal horizontal-rule" />
+          </button>
+          <button
+            disabled={!isEditable}
+            onClick={() => {
+              showModal('Insert Image', (onClose) => (
+                <InsertImageDialog
+                  activeEditor={activeEditor}
+                  onClose={onClose}
+                />
+              ));
+            }}
+            className='toolbar-item spaced'
+            title='Insert image'
+            type="button"
+            aria-label='Insert a new image after cursor'>
+            <i className="normal image" />
+          </button>
+          <button
+            disabled={!isEditable}
+            onClick={() => {
+              showModal('Insert audio', (onClose) => (
+                <InsertAudioDialog
+                  activeEditor={activeEditor}
+                  onClose={onClose}
+                />
+              ));
+            }}
+            className='toolbar-item spaced'
+            title='Insert audio'
+            type="button"
+            aria-label='Insert a new audio after cursor'>
+            <i className="normal audio" />
+          </button>
+          {EmbedConfigs.map((embedConfig) => (
+            <button
+              key={embedConfig.type}
+              disabled={!isEditable}
               onClick={() => {
                 activeEditor.dispatchCommand(
-                  INSERT_HORIZONTAL_RULE_COMMAND,
-                  undefined,
+                  INSERT_EMBED_COMMAND,
+                  embedConfig.type,
                 );
               }}
-              className="item">
-              <i className="icon horizontal-rule" />
-              <span className="text">Horizontal Rule</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() => {
-                showModal('Insert Image', (onClose) => (
-                  <InsertImageDialog
-                    activeEditor={activeEditor}
-                    onClose={onClose}
-                  />
-                ));
-              }}
-              className="item">
-              <i className="icon image" />
-              <span className="text">Image</span>
-            </DropDownItem>
-            {EmbedConfigs.map((embedConfig) => (
-              <DropDownItem
-                key={embedConfig.type}
-                onClick={() => {
-                  activeEditor.dispatchCommand(
-                    INSERT_EMBED_COMMAND,
-                    embedConfig.type,
-                  );
-                }}
-                className="item">
-                {embedConfig.icon}
-                <span className="text">{embedConfig.contentName}</span>
-              </DropDownItem>
-            ))}
-          </DropDown>
+              className='toolbar-item spaced'
+              title={`Insert ${embedConfig.contentName}`}
+              type="button"
+              aria-label={`Insert a new ${embedConfig.contentName} after cursor`}>
+              {embedConfig.icon}
+            </button>
+          ))}
         </>
       )}
       <Divider />

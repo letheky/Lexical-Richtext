@@ -26,6 +26,7 @@ import * as ReactDOM from 'react-dom';
 import useModal from '../../hooks/useModal';
 import { EmbedConfigs } from '../AutoEmbedPlugin';
 import { InsertImageDialog } from '../ImagesPlugin';
+import { InsertAudioDialog } from '../AudioPlugin';
 
 class ComponentPickerOption extends MenuOption {
     constructor(title, options) {
@@ -143,6 +144,14 @@ function getBaseOptions(editor, showModal) {
             onSelect: () =>
                 showModal('Insert Image', (onClose) => (
                     <InsertImageDialog activeEditor={editor} onClose={onClose} />
+                )),
+        }),
+        new ComponentPickerOption('Audio', {
+            icon: <i className="icon audio" />,
+            keywords: ['audio', 'audio/file'],
+            onSelect: () =>
+                showModal('Insert Audio', (onClose) => (
+                    <InsertAudioDialog activeEditor={editor} onClose={onClose} />
                 )),
         }),
         ...(['left', 'center', 'right', 'justify']).map(
